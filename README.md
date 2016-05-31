@@ -4,10 +4,10 @@ iOS开发中常用到的小技巧
 ### 获取 UITexView 高度
 
 ```Objective-C
-- (CGSize)getStringRectInTextView:(NSString *)string InTextView:(UITextView *)textView {
+- (CGSize)getStringSizeInTextView:(NSString *)string InTextView:(UITextView *)textView {
     //实际textView显示时我们设定的宽
     UITextView* localTextView = textView;
-    CGFloat contentWidth = CGRectGetWidth(localTextView.frame);
+    CGFloat contentWidth = CGRectGetWidth(localTextView.bounds);
     //但事实上内容需要除去显示的边框值
     CGFloat broadWith    = (localTextView.contentInset.left + localTextView.contentInset.right
                             + localTextView.textContainerInset.left
