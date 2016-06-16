@@ -2,6 +2,24 @@
 iOS开发中常用到的小技巧
 ---
 
+### 隐藏导航栏下面的黑线
+
+* 第一种方案 设置一张背景图片，然后在设置一张shadowImage
+
+```Objective-C
+[[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+[[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+```
+
+* 第二种方案 设置 clipsToBounds = YES
+
+```Objective-C
+[UINavigationBar appearance].clipsToBounds = YES;
+```
+* 第三种方案 
+
+    遍历UINavigationBar的所有子视图，发现有UIImageView类型的视图就remove掉，或者设成隐藏状态（hidden）
+
 ### 获取 UITexView 高度
 
 ```Objective-C
